@@ -1,22 +1,23 @@
 "use strict";
 
-//Objects Literal
-var Dog = {
-    name: "Caty",
-    color: "black"
-}
+//Types console
+console.log("Hello");
+console.warn("Warn");
+console.error("Error");
 
-//Add properties
-Dog.age = 3;
-document.write("The age of Dog is: " + Dog.age);
+//Operators
+//Two Kind of operator
 
-//Objects Constructor
-function Cat () {
-    this.name = "Lucky";
-    this.color = "coffee";
-}
+//Why the kind is a string and numeric take as a concatenation
+console.log(1 + "2");
+console.log(1 + "3" + 2);
+console.log(1 + "3" * 2);
 
-//Instance Object
-var cat = new Cat();
-document.write("<br />The name your Cat is: " + cat.name);
+//Operations Number
+console.log(1 - "2");
 
+//Kind Boolean
+console.log(1 > 10);
+
+//Get Kind
+console.log(typeof(1 > 10));
