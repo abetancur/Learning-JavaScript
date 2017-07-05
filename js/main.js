@@ -1,17 +1,18 @@
 "use strict";
 
-//Undefined
-function CalNumber (b, a) {
-    console.log(b);
-    console.log(a);
+var one = 1;
+
+function CalNumber () {
+    console.log(one); //scope global
+    var two = 2;
+    function Ceil () {
+        var tree = 3;
+        console.log(two); //new scope global
+        console.log(tree); //scope local
+    }
+    Ceil();
+    console.log(tree);
 }
 
-CalNumber(2); //undefined "a": the variable is defined but not been assigned a value
-
-//Error defined
-function Ceil(b) {
-    console.log(b);
-    console.log(a);
-}
-
-Ceil(3); //Reference Error "a": the variable is not defined
+CalNumber();
+console.log(two);
