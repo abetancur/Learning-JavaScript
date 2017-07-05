@@ -1,23 +1,17 @@
 "use strict";
 
-//Types console
-console.log("Hello");
-console.warn("Warn");
-console.error("Error");
+//Undefined
+function CalNumber (b, a) {
+    console.log(b);
+    console.log(a);
+}
 
-//Operators
-//Two Kind of operator
+CalNumber(2); //undefined "a": the variable is defined but not been assigned a value
 
-//Why the kind is a string and numeric take as a concatenation
-console.log(1 + "2");
-console.log(1 + "3" + 2);
-console.log(1 + "3" * 2);
+//Error defined
+function Ceil(b) {
+    console.log(b);
+    console.log(a);
+}
 
-//Operations Number
-console.log(1 - "2");
-
-//Kind Boolean
-console.log(1 > 10);
-
-//Get Kind
-console.log(typeof(1 > 10));
+Ceil(3); //Reference Error "a": the variable is not defined
