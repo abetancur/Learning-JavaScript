@@ -1,18 +1,18 @@
-"use strict";
+//"use strict";
 
-var one = 1;
-
-function CalNumber () {
-    console.log(one); //scope global
-    var two = 2;
-    function Ceil () {
-        var tree = 3;
-        console.log(two); //new scope global
-        console.log(tree); //scope local
-    }
-    Ceil();
-    console.log(tree);
+function Cat(name, color) {
+    this.name = name;
+    this.color = color;
 }
 
-CalNumber();
-console.log(two);
+var cat = new Cat('job', 'red');
+//New keyword return a properties of object instance
+console.log(cat);
+
+//Object Dog belongs to object window
+function Dog() {
+    this.age = 'green';
+}
+
+var dog = Dog();
+console.log(window.age);
