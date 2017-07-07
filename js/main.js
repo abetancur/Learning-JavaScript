@@ -1,47 +1,26 @@
 "use strict";
 
-//Object Literal
-var dog = {
-    name: "Fluffy",
-    color: "White"
-}
-console.log(dog);
+var cat = {
+    name: {first: "Fluffy", last: "labe"},
+    color: "coffee"
+};
 
-//Constructor Functions
-function Panter(name, color) {
-    this.name = name;
-    this.color = color;
-}
-var panter = new Panter("Fluffy", "White");
-console.log(panter);
+//read-only properties
+console.log(Object.defineProperty(cat, "name", {writable: false}));
+//Prevent the object changed using
+Object.freeze(cat.name);
+cat.name.first = "Lucky"; //it cant not change the object read only
 
-//Objects Create
-var cat = Object.create(Object.prototype, {
-    name: {
-        value: 'Fluffy',
-        enumerable: true,
-        writable: true,
-        configurable: true
-    },
-    color: {
-        value: 'White',
-        enumerable: true,
-        writable: true,
-        configurable: true
+//Show property descriptor
+console.log(Object.getOwnPropertyDescriptor(cat, "name"));
+
+//read-only properties
+/*
+console.log(Object.defineProperties(cat, {
+    "name": {
+        writable: false
     }
-});
-console.log(cat);
+}));
+//Show property descriptor
+console.log(Object.getOwnPropertyDescriptors(cat, "name"));*/
 
-//ES6 Class
-class Animal {
-    constructor(name, color) {
-        this.name = name;
-        this.color = color;
-    }
-
-    type() {
-        console.log(this.name);
-    }
-}
-var animal = new Animal("Eagle", "gray");
-animal.type();
