@@ -1,23 +1,18 @@
 "use strict";
 
-var cat = {
-    name: {first: "Fluffy", lastName: "label"},
-    color: "coffee"
-};
+var arr = Array("coffee", "green", "gray");
 
-//Attribute in properties and new create property of object
-Object.defineProperty(cat, "fullname", {
+//var last = arr[arr.length - 1];
+//create new property get value last position
+Object.defineProperty(Array.prototype, "last", {
     get: function () {
-        return this.name.first + " " + this.name.lastName
-    },
-    set: function (value) {
-        var parts = value.split(" ");
-        this.name.first = parts[0];
-        this.name.lastName = parts[1];
+        return this[this.length - 1];
     }
 });
 
-cat.fullname = "Prety Strong";
-console.log(cat.fullname);
-console.log(cat.name.first);
-console.log(cat.name.lastName);
+
+console.log(arr.last);
+
+var arr2 = ["one", "two", "three"];
+//Use the array objects prototype
+console.log(arr2.last);
