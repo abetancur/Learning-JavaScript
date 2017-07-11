@@ -1,18 +1,17 @@
 "use strict";
 
-var arr = Array("coffee", "green", "gray");
+//A property "prototype is an objects" that exits on every function, but in a object it is undefined
+//Object Prototype
+function Cat(name, color) {
+    this.name = name;
+    this.color = color;
+}
+Cat.prototype.age = 3;
 
-//var last = arr[arr.length - 1];
-//create new property get value last position
-Object.defineProperty(Array.prototype, "last", {
-    get: function () {
-        return this[this.length - 1];
-    }
-});
+//Instance
+var fluffy = new Cat("Fluffy", "red");
+fluffy.age = 5;
 
-
-console.log(arr.last);
-
-var arr2 = ["one", "two", "three"];
-//Use the array objects prototype
-console.log(arr2.last);
+console.log(Cat.prototype);
+console.log(fluffy.__proto__);
+console.log(fluffy.hasOwnProperty("age"));
